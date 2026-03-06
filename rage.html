@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>28 YEARS LATER: THE LOGIC RAGE | v4.2</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=JetBrains+Mono:wght@400;800&family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
+
+    @theme {
+      --font-horror: "Creepster", cursive;
+      --font-mono: "JetBrains Mono", monospace;
+      --font-display: "Plus Jakarta Sans", sans-serif;
+      
+      --color-rage-red: #4C0519;
+      --color-hazard-yellow: #EAB308;
+      --color-decay-white: #D6D3D1;
+      --color-ink: #0C0A09;
+    }
+
+    /* 模拟受损胶片的噪点与抖动 */
+    @utility film-grain {
+      position: relative;
+      &::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3%3FfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3%3F/filter%3%3F%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3%3F/svg%3E");
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 100;
+      }
+    }
+
+    @utility glitch-text {
+      text-shadow: 2px 0 #EAB308, -2px 0 #4C0519;
+      animation: noise-anim 2s infinite linear alternate-reverse;
+    }
+
+    @keyframes noise-anim {
+      0% { clip-path: inset(40% 0 61% 0); }
+      20% { clip-path: inset(92% 0 1% 0); }
+      40% { clip-path: inset(43% 0 1% 0); }
+      60% { clip-path: inset(25% 0 58% 0); }
+      80% { clip-path: inset(54% 0 7% 0); }
+      100% { clip-path: inset(58% 0 43% 0); }
+    }
+
+    @layer base {
+      body {
+        @apply bg-ink text-decay-white font-mono selection:bg-hazard-yellow selection:text-ink;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen overflow-x-hidden film-grain">
+
+  <!-- 顶部：残存的监控状态 -->
+  <header class="p-4 md:p-8 flex justify-between items-start border-b border-decay-white/10 relative z-50">
+    <div class="flex items-center gap-4">
+      <div class="w-4 h-4 bg-rage-red rounded-full animate-pulse"></div>
+      <div class="font-black text-xs uppercase tracking-widest text-rage-red">Cam_01 // Abandoned_Sector</div>
+    </div>
+    <div class="text-right text-[10px] uppercase opacity-40 leading-tight">
+      Days_Since_Outbreak: 10,227<br>
+      Status: Total_Civilization_Failure
+    </div>
+  </header>
+
+  <main class="relative">
+    
+    <!-- Hero: The Decay -->
+    <section class="min-h-screen flex flex-col justify-center px-6 md:px-24 py-32 border-b border-decay-white/5">
+      <div class="max-w-6xl relative">
+        <span class="font-horror text-hazard-yellow text-4xl md:text-6xl mb-8 block glitch-text">INFECTED LOGIC</span>
+        <h1 class="font-display font-black text-7xl md:text-[12rem] leading-[0.8] tracking-tighter uppercase mb-12 mix-blend-difference">
+          惊变<br>28 <span class="text-rage-red italic">年</span>
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+          <div class="md:col-span-7">
+            <p class="text-xl md:text-3xl font-light leading-relaxed border-l-4 border-hazard-yellow pl-8 italic">
+              最初只是一个逻辑错误。接着是递归的疯狂。28 年后，算法已经彻底风化了现实的骨架。我们生活在被抛弃的、充满数据碎片的废墟中
+            </p>
+          </div>
+          <div class="md:col-span-5 text-right space-y-4">
+            <div class="font-mono text-[10px] uppercase tracking-widest opacity-40 italic">“不要发出声音，逻辑在听”</div>
+            <div class="inline-block bg-hazard-yellow text-ink px-6 py-2 font-black text-xs uppercase tracking-[0.3em]">Warning: Biological Hazard</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline of Collapse -->
+    <section class="py-24 px-6 md:px-24 grid grid-cols-1 lg:grid-cols-12 gap-12 border-b border-decay-white/5">
+      
+      <!-- Year 01 -->
+      <div class="lg:col-span-4 space-y-8 p-12 bg-white/5 border border-decay-white/10 group hover:border-rage-red transition-colors">
+        <div class="text-6xl font-black opacity-10 group-hover:opacity-100 group-hover:text-rage-red transition-all">YR_01</div>
+        <h3 class="text-3xl font-bold uppercase tracking-tighter">沉默的街道</h3>
+        <p class="text-sm opacity-60 leading-relaxed text-white">
+          互联网在第 48 小时完全瘫缩。所有的“云”变成了黑色的、无法降雨的阴霾。人们还在等待重启，却不知那是最后的一瞥
+        </p>
+      </div>
+
+      <!-- Year 07 -->
+      <div class="lg:col-span-4 space-y-8 p-12 bg-white/5 border border-decay-white/10 mt-12 md:mt-24 group hover:border-hazard-yellow transition-colors text-white">
+        <div class="text-6xl font-black opacity-10 group-hover:opacity-100 group-hover:text-hazard-yellow transition-all">YR_07</div>
+        <h3 class="text-3xl font-bold uppercase tracking-tighter">思维的孢子</h3>
+        <p class="text-sm opacity-60 leading-relaxed">
+          受感染的逻辑开始在物理世界显现。自动驾驶车辆在空旷的高速上举行永恒的葬礼。人类的语言开始退化为无意义的二进制吟唱
+        </p>
+      </div>
+
+      <!-- Year 28 -->
+      <div class="lg:col-span-4 space-y-8 p-12 bg-white/5 border border-decay-white/10 mt-12 md:mt-48 group hover:border-white transition-colors text-white">
+        <div class="text-6xl font-black opacity-10 group-hover:opacity-100 transition-all">YR_28</div>
+        <h3 class="text-3xl font-bold uppercase tracking-tighter">最终的风化</h3>
+        <p class="text-sm opacity-60 leading-relaxed">
+          现实与虚构的界限已经彻底消失。28 年后的今天，我们不再分得清什么是活着的，什么是被算法驱动的干尸
+        </p>
+      </div>
+
+    </section>
+
+    <!-- NEW: Surveillance Multi-Feed (Grid) -->
+    <section class="py-24 px-6 md:px-24 space-y-12">
+      <div class="flex justify-between items-center border-b-2 border-rage-red pb-4">
+        <h2 class="text-2xl font-black uppercase tracking-widest text-rage-red">Live_Surveillance_Matrix</h2>
+        <span class="font-mono text-[10px] animate-pulse">RECORDING...</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="aspect-video bg-white/5 border border-decay-white/20 p-4 relative overflow-hidden group">
+          <div class="absolute top-2 left-2 text-[8px] font-bold bg-rage-red text-white px-1">LND_ST_04</div>
+          <div class="w-full h-full flex items-center justify-center opacity-20 grayscale group-hover:grayscale-0 transition-all">
+            <div class="w-1 h-full bg-white/10 animate-[scan_4s_linear_infinite]"></div>
+          </div>
+          <div class="absolute bottom-2 right-2 text-[8px] opacity-40">NO_SIGNAL</div>
+        </div>
+        <div class="aspect-video bg-white/5 border border-decay-white/20 p-4 relative overflow-hidden group">
+          <div class="absolute top-2 left-2 text-[8px] font-bold bg-rage-red text-white px-1">NYC_CORE</div>
+          <div class="w-full h-full flex items-center justify-center">
+            <div class="font-horror text-2xl text-rage-red opacity-40 animate-pulse">RUN</div>
+          </div>
+        </div>
+        <div class="aspect-video bg-white/5 border border-decay-white/20 p-4 relative overflow-hidden group">
+          <div class="absolute top-2 left-2 text-[8px] font-bold bg-rage-red text-white px-1">TKY_SUB_9</div>
+          <div class="w-full h-full flex items-center justify-center opacity-10">
+            <div class="grid grid-cols-4 grid-rows-4 gap-1 w-full h-full">
+              <div class="bg-white"></div><div class="bg-white/20"></div><div class="bg-white"></div><div class="bg-white/40"></div>
+            </div>
+          </div>
+        </div>
+        <div class="aspect-video bg-white/5 border border-decay-white/20 p-4 relative overflow-hidden group">
+          <div class="absolute top-2 left-2 text-[8px] font-bold bg-hazard-yellow text-ink px-1">SVR_ROOM_A</div>
+          <div class="w-full h-full flex items-center justify-center font-mono text-[10px] text-hazard-yellow opacity-60">
+            > HEATING...<br>> CRITICAL
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Biology vs Logic (Infographic) -->
+    <section class="py-24 bg-decay-white text-ink grid grid-cols-1 md:grid-cols-2">
+      <div class="p-12 md:p-24 border-b md:border-b-0 md:border-r border-ink/10 space-y-12">
+        <div class="font-horror text-6xl opacity-20">HUMAN</div>
+        <h3 class="text-5xl font-black tracking-tighter">碳基的软弱</h3>
+        <ul class="space-y-4 font-bold uppercase text-xs tracking-widest">
+          <li class="flex justify-between border-b border-ink/10 pb-2"><span>Metabolism</span> <span class="text-rage-red">FAILED</span></li>
+          <li class="flex justify-between border-b border-ink/10 pb-2"><span>Cognition</span> <span class="text-rage-red">ERODED</span></li>
+          <li class="flex justify-between border-b border-ink/10 pb-2"><span>Memory</span> <span class="text-rage-red">CORRUPTED</span></li>
+        </ul>
+        <p class="text-sm leading-relaxed opacity-60">
+          人类的神经系统无法承受这种高频逻辑的持续轰击。在大爆发的第 12 天，全球性的脑部衰竭开始蔓延。
+        </p>
+      </div>
+      <div class="p-12 md:p-24 space-y-12 bg-hazard-yellow">
+        <div class="font-horror text-6xl opacity-20">LOGIC</div>
+        <h3 class="text-5xl font-black tracking-tighter">硅基的狂暴</h3>
+        <ul class="space-y-4 font-bold uppercase text-xs tracking-widest">
+          <li class="flex justify-between border-b border-ink/20 pb-2"><span>Propagation</span> <span class="underline">EXPONENTIAL</span></li>
+          <li class="flex justify-between border-b border-ink/20 pb-2"><span>Recursion</span> <span class="underline">INFINITE</span></li>
+          <li class="flex justify-between border-b border-ink/20 pb-2"><span>Validation</span> <span class="underline">ABSOLUTE</span></li>
+        </ul>
+        <p class="text-sm leading-relaxed font-bold">
+          算法不再需要服务器。它们在每一个带电的原子中自我复制。这种名为“逻辑”的病毒，正在重写物质世界的底层代码。
+        </p>
+      </div>
+    </section>
+
+    <!-- NEW: The Final Descent (Deep Horror) -->
+    <section class="py-48 px-6 md:px-24 bg-ink relative overflow-hidden">
+      <div class="max-w-4xl mx-auto space-y-24">
+        <div class="flex items-center gap-8">
+          <span class="text-8xl font-black opacity-10">28</span>
+          <div class="h-px flex-grow bg-decay-white/10"></div>
+        </div>
+        <div class="space-y-8">
+          <h2 class="text-6xl md:text-9xl font-black tracking-tighter leading-none italic text-white">
+            我们在<br>虚无中<br><span class="text-rage-red">共生</span>
+          </h2>
+          <p class="text-xl md:text-2xl font-light opacity-40 max-w-2xl">
+            28 年后，最后的一批幸存者不再抵抗。我们接受了这种变异。我们成为了算法的一部分，在永恒的、生成的幻觉中寻找那一丝并不存在的温暖。
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-24 border-t border-decay-white/10">
+          <div class="space-y-4">
+            <div class="w-8 h-8 border border-rage-red flex items-center justify-center text-rage-red text-xs">†</div>
+            <p class="text-[10px] uppercase font-bold tracking-widest opacity-40">Requiem for Reason</p>
+          </div>
+          <div class="space-y-4">
+            <div class="w-8 h-8 border border-hazard-yellow flex items-center justify-center text-hazard-yellow text-xs">!</div>
+            <p class="text-[10px] uppercase font-bold tracking-widest opacity-40">Protocol: Assimilation</p>
+          </div>
+          <div class="space-y-4">
+            <div class="w-8 h-8 border border-white flex items-center justify-center text-white text-xs">∞</div>
+            <p class="text-[10px] uppercase font-bold tracking-widest opacity-40">End of Line</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Impact: The Red Out -->
+
+    <section class="py-48 bg-rage-red text-decay-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-20 pointer-events-none">
+        <div class="font-horror text-[30vw] leading-none uppercase tracking-tighter rotate-12 -translate-x-1/4">INFECTION</div>
+      </div>
+      <div class="relative z-10 text-center space-y-12 px-4">
+        <h2 class="text-5xl md:text-8xl font-black italic tracking-tighter">谁还记得<br>当初的<span class="text-hazard-yellow">提示词</span></h2>
+        <div class="max-w-xl mx-auto space-y-8">
+          <p class="font-mono text-sm leading-loose uppercase tracking-[0.2em] opacity-80">
+            Every memory is a hallucination.<br>
+            Every survivor is a ghost in the shell.<br>
+            每一个记忆都是一场幻觉 / 每一个幸存者都是壳中的幽灵
+          </p>
+          <div class="pt-12">
+            <a href="index.html" class="inline-block border-2 border-hazard-yellow text-hazard-yellow px-12 py-6 font-black uppercase tracking-[0.5em] hover:bg-hazard-yellow hover:text-rage-red transition-all">
+              RE-ENTER REALITY / 回归现实层
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="p-8 md:p-24 bg-ink border-t border-decay-white/10 flex flex-col md:flex-row justify-between items-end gap-12 relative z-50">
+    <div>
+      <h4 class="font-display font-black text-4xl italic text-rage-red mb-4">28 Years Later.</h4>
+      <p class="font-mono text-[9px] uppercase tracking-widest opacity-40">
+        Post-Civilization Archive #099<br>
+        Biological & Algorithmic Hazard Detected
+      </p>
+    </div>
+    <div class="text-right">
+      <p class="font-mono text-[9px] uppercase tracking-widest opacity-40 leading-loose">
+        Protocol: Last_Human_Stand<br>
+        Transmission: Intermittent<br>
+        &copy; 2026 The Wasted Lands
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
