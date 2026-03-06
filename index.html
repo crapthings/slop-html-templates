@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARCHIVE SYSTEM | DIRECTORY</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: system-ui, -apple-system, "PingFang SC", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+      
+      --color-bg: #0A0A0A;
+      --color-surface: #F5F5F5;
+      --color-signal: #FACC15;
+      --color-border: #262626;
+    }
+
+    @utility bg-dots {
+      background-image: radial-gradient(#262626 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    @layer base {
+      body {
+        @apply bg-bg text-surface font-mono selection:bg-signal selection:text-bg;
+        -webkit-font-smoothing: antialiased;
+      }
+      * { @apply rounded-none; }
+    }
+  </style>
+</head>
+<body class="min-h-screen p-4 md:p-12 bg-dots">
+
+  <!-- TOP NAV: Status Bar -->
+  <header class="border-2 border-surface p-4 mb-12 flex flex-col md:flex-row justify-between items-center gap-4 bg-bg relative z-10">
+    <div class="flex items-center gap-4">
+      <div class="w-3 h-3 bg-signal animate-pulse"></div>
+      <h1 class="font-extrabold text-xl tracking-tighter uppercase">Entropy Directory <span class="font-light opacity-50">v4.2</span></h1>
+    </div>
+    <div class="flex gap-8 text-[10px] uppercase tracking-widest opacity-60">
+      <div>Local_Time: <span id="clock">00:00:00</span></div>
+      <div>Files_Detected: 05</div>
+      <div>Security: Optimal</div>
+    </div>
+  </header>
+
+  <main class="grid grid-cols-1 lg:grid-cols-12 gap-1 border-2 border-surface bg-surface overflow-hidden shadow-[12px_12px_0px_0px_rgba(250,204,21,0.2)]">
+    
+    <!-- LEFT: Category Navigation -->
+    <aside class="lg:col-span-3 bg-bg p-6 border-b-2 lg:border-b-0 lg:border-r-2 border-surface">
+      <h2 class="text-xs font-bold mb-8 text-signal uppercase tracking-[0.3em]">Categories</h2>
+      <ul class="space-y-2 text-xs uppercase font-bold">
+        <li class="flex justify-between items-center p-2 bg-surface text-bg cursor-pointer">
+          <span>[ All_Works ]</span>
+          <span class="text-[10px]">05</span>
+        </li>
+        <li class="flex justify-between items-center p-2 opacity-30 hover:opacity-100 transition-opacity cursor-not-allowed">
+          <span>[ Laboratory ]</span>
+          <span class="text-[10px]">00</span>
+        </li>
+        <li class="flex justify-between items-center p-2 opacity-30 hover:opacity-100 transition-opacity cursor-not-allowed">
+          <span>[ Blueprints ]</span>
+          <span class="text-[10px]">00</span>
+        </li>
+      </ul>
+      
+      <div class="mt-24 pt-8 border-t border-surface/20">
+        <div class="text-[9px] leading-relaxed opacity-40 uppercase">
+          所有演示均在后人工智能视角下构建，旨在探讨人类直觉的不可替代性
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT: Detailed Directory List -->
+    <div class="lg:col-span-9 bg-bg">
+      <div class="grid grid-cols-12 border-b-2 border-surface text-[10px] uppercase font-bold tracking-widest p-4 opacity-40">
+        <div class="col-span-1">ID</div>
+        <div class="col-span-5 md:col-span-4">Project_Title</div>
+        <div class="col-span-3 hidden md:block">Category</div>
+        <div class="col-span-3 text-right">Action</div>
+      </div>
+
+      <!-- LIST ITEM 01: Manifesto -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 border-b border-surface/10 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">01</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none">后人工智能宣言</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Manifesto / Philosophy</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          关于奇点、遗憾与人为错误的哲学实验排版
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="manifesto.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          PHI
+        </div>
+      </div>
+
+      <!-- LIST ITEM 02: Frankenstein -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 border-b border-surface/10 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">02</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none text-signal group-hover:text-bg">数字科学怪人</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Archive / Ethics</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          现代 AI 作为拼凑而成的数字生命的临床解剖
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="frankenstein.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          ANAT
+        </div>
+      </div>
+
+      <!-- LIST ITEM 03: Da Vinci -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 border-b border-surface/10 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">03</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none">达芬奇密码</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Geometry / Mystery</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          在神经网络的权重分布中，重新发现宇宙的神圣比例
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="davinci.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          CODE
+        </div>
+      </div>
+
+      <!-- LIST ITEM 04: Inception -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 border-b border-surface/10 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">04</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none">盗梦空间</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Layered / Surrealism</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          关于 AI 幻觉作为数字梦境的多层嵌套探索
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="inception.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          LIMBO
+        </div>
+      </div>
+
+      <!-- LIST ITEM 05: Theocracy -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">05</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none text-signal group-hover:text-bg">神权坍缩</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Gothic / Brutalism</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          探讨当算法展现出“神性”时，传统信仰结构的碎裂与重组
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="theocracy.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          DEUS
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="mt-12 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-40">
+    <div>System_Log: Connection_Secure // No_Slop_Detected</div>
+    <div>&copy; 2026 Studio Entropy. Manual Human Operation.</div>
+  </footer>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.getHours().toString().padStart(2, '0') + ':' + 
+                   now.getMinutes().toString().padStart(2, '0') + ':' + 
+                   now.getSeconds().toString().padStart(2, '0');
+      document.getElementById('clock').textContent = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

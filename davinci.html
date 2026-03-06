@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Da Vinci Cipher | Codice Digital</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,800;1,400&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: "EB Garamond", serif;
+      --font-mono: "JetBrains Mono", monospace;
+      
+      --color-vellum: #E5D3B3;
+      --color-ink: #3E2723;
+      --color-gold: #D4AF37;
+      --color-accent: #8B4513;
+    }
+
+    /* 黄金螺旋装饰 */
+    @utility decoration-phi {
+      aspect-ratio: 1.618;
+      border: 1px solid color-mix(in srgb, var(--color-gold), transparent 80%);
+      border-radius: 0 100% 0 0;
+    }
+
+    @layer base {
+      body {
+        @apply bg-vellum text-ink font-display selection:bg-gold selection:text-ink;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  </style>
+</head>
+<body class="p-6 md:p-16 min-h-screen relative overflow-x-hidden">
+
+  <!-- 背景几何：神圣比例 -->
+  <div class="fixed inset-0 pointer-events-none opacity-20">
+    <div class="absolute top-0 left-0 w-screen h-screen border-[0.5px] border-gold/30 rounded-full scale-150 -translate-x-1/4 -translate-y-1/4"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vh] h-[80vh] border-[0.5px] border-gold/20 rotate-45"></div>
+  </div>
+
+  <!-- 顶部标题：对称美学 -->
+  <header class="relative z-10 text-center mb-32 border-b border-ink/10 pb-12">
+    <div class="font-mono text-[10px] uppercase tracking-[0.5em] mb-4 opacity-60">
+      Mathematicus &bull; Mysterium &bull; Algorithm
+    </div>
+    <h1 class="text-6xl md:text-9xl font-extrabold tracking-tighter uppercase leading-none mb-4">
+      达芬奇<span class="italic font-normal text-gold">密码</span>
+    </h1>
+    <p class="font-mono text-xs italic opacity-40">Codice Digital: The Hidden Pattern of Intelligence</p>
+  </header>
+
+  <main class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 max-w-7xl mx-auto">
+    
+    <!-- 左侧：几何观察 (Geometric Observation) -->
+    <div class="md:col-span-5 space-y-24">
+      <section class="relative">
+        <div class="decoration-phi w-full mb-8"></div>
+        <h2 class="text-4xl font-bold italic mb-6">Phi 架构</h2>
+        <p class="text-lg leading-relaxed opacity-90 first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-2">
+          在神经网络的权重分布中，我们意外地发现了与自然界相似的自组织规律。这并非巧合，而是宇宙最底层的数学语言。当机器开始学习如何“美”，它实际上是在重新发现那条被达芬奇隐藏在画作背后的黄金曲线
+        </p>
+      </section>
+
+      <div class="border border-gold/40 p-8 relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-vellum px-4 font-mono text-[10px] uppercase tracking-widest">
+          Calculus
+        </div>
+        <div class="font-mono text-[11px] leading-loose">
+          <span class="text-gold">INPUT:</span> 1, 1, 2, 3, 5, 8, 13, 21...<br>
+          <span class="text-gold">LIMIT:</span> (1 + √5) / 2 = 1.61803398875...<br>
+          <span class="text-gold">RESULT:</span> DIVINE PROPORTION DETECTED
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧：加密文本 (Encrypted Text) -->
+    <div class="md:col-span-7 flex flex-col justify-center">
+      <article class="space-y-12 pl-0 md:pl-12 border-l border-ink/5">
+        <div>
+          <h3 class="font-mono text-[10px] uppercase tracking-widest text-gold mb-4">Section I / 隐形的模式</h3>
+          <p class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+            “所有的科学，若非源自数学的验证，皆为虚妄”
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="font-mono text-[10px] uppercase tracking-widest text-gold mb-4">Section II / 算法即神秘学</h3>
+          <p class="text-xl leading-relaxed opacity-80">
+            我们正处于第二个文艺复兴的门槛。不同的是，这次的画笔是参数，画布是高维向量空间。AI 并不是在创造，它是在“解码”——从混沌的噪声中，解出那条通往真理的、唯一确定的对称轴
+          </p>
+        </div>
+
+        <div class="pt-12">
+          <a href="#" class="inline-block relative group">
+            <span class="text-2xl font-bold italic border-b-2 border-gold pb-1 group-hover:text-gold transition-colors">开启解密程序</span>
+            <div class="absolute -right-12 top-1/2 -translate-y-1/2 font-mono text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+              [ CIPHER_KEY_REQ ]
+            </div>
+          </a>
+        </div>
+      </article>
+    </div>
+
+  </main>
+
+  <!-- 底部：镜像排版 -->
+  <footer class="mt-48 pt-12 border-t border-ink/20 flex flex-col md:flex-row justify-between items-center gap-8">
+    <div class="font-display font-bold text-xl italic opacity-40 scale-x-[-1]">
+      Mirror Writing: Truth is often hidden in reverse.
+    </div>
+    <div class="text-center md:text-right">
+      <p class="font-mono text-[10px] uppercase tracking-[0.3em] leading-loose">
+        Master: Leonardo AI Revived<br>
+        Year: MMXXVI / 2026<br>
+        &copy; Studio Entropy Archive
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

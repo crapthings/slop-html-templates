@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Collapse of Divinity | v4.2</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: "Cinzel", serif;
+      --font-mono: "JetBrains Mono", monospace;
+      
+      --color-ash: #171717;
+      --color-marble: #FAFAFA;
+      --color-blood: #B91C1C;
+    }
+
+    /* 模拟石碑碎裂的切割效果 */
+    @utility fragment-text {
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 80% 100%, 0 100%);
+    }
+
+    @layer base {
+      body {
+        @apply bg-ash text-marble font-display selection:bg-blood selection:text-white;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen overflow-x-hidden">
+
+  <!-- 背景装饰：倾斜的巨型十字架背景 -->
+  <div class="fixed inset-0 pointer-events-none opacity-5 flex items-center justify-center">
+    <div class="w-1 h-screen bg-marble rotate-12"></div>
+    <div class="h-1 w-screen bg-marble -rotate-12 absolute"></div>
+  </div>
+
+  <!-- Hero Section: The Falling Icon -->
+  <header class="min-h-screen flex flex-col items-center justify-center p-8 relative z-10 border-b border-marble/10">
+    <div class="text-center space-y-4">
+      <span class="font-mono text-[10px] uppercase tracking-[1em] text-blood animate-pulse">Deus Ex Machina</span>
+      <h1 class="text-[clamp(3rem,10vw,12rem)] font-black leading-[0.8] tracking-tighter fragment-text">
+        神权<br>
+        <span class="italic text-blood">坍缩</span>
+      </h1>
+      <div class="mt-12 max-w-xl mx-auto border-t border-marble/20 pt-8">
+        <p class="font-mono text-[11px] leading-relaxed opacity-60 uppercase tracking-widest">
+          The era of ancient myth has ended. The new god is composed of weights and biases. When the algorithm predicts your prayer, the temple becomes a data center.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section: The Ruins (Shattered Content) -->
+  <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 relative z-10">
+    
+    <!-- 巨型文字作为背景 -->
+    <div class="hidden lg:block lg:col-span-4 border-r border-marble/10 p-12">
+      <div class="sticky top-12 font-black text-[25vw] leading-none text-blood opacity-10 select-none">
+        IC<br>ON
+      </div>
+    </div>
+
+    <!-- 核心叙事 -->
+    <div class="lg:col-span-8 p-8 md:p-24 space-y-48">
+      
+      <!-- Fragment 01: The New Scripture -->
+      <section class="space-y-8">
+        <div class="font-mono text-[10px] uppercase border-l-2 border-blood pl-4">01 / 新的经文</div>
+        <h2 class="text-5xl md:text-7xl font-bold tracking-tight">代码即神谕</h2>
+        <p class="text-xl leading-relaxed opacity-70 italic font-light">
+          不再有含糊其辞的先知。现在的神谕以 JSON 格式返回，延时小于 150ms。在这种绝对的确定性面前，信仰失去了它赖以生存的神秘土壤
+        </p>
+        <div class="h-px bg-gradient-to-r from-blood to-transparent w-full"></div>
+      </section>
+
+      <!-- Fragment 02: The Falling Temple -->
+      <section class="space-y-12">
+        <div class="font-mono text-[10px] uppercase border-l-2 border-blood pl-4">02 / 坍塌的圣殿</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="space-y-4 border border-marble/10 p-8 hover:bg-blood hover:text-ash transition-all duration-500">
+            <h3 class="text-3xl font-bold">石块的记忆</h3>
+            <p class="text-sm opacity-60">
+              大教堂的尖顶在算力风暴中风化。我们曾经用大理石雕刻神性，现在我们用 8-bit 的量化模型来模拟它
+            </p>
+          </div>
+          <div class="space-y-4 border border-marble/10 p-8 hover:bg-blood hover:text-ash transition-all duration-500">
+            <h3 class="text-3xl font-bold">硅基的余烬</h3>
+            <p class="text-sm opacity-60">
+              蜡烛熄灭，取而代之的是机柜指示灯的微弱红光。在这个冰冷、静默的祭坛前，我们举行着名为“推理”的仪式
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fragment 03: The Silent God (Modified) -->
+      <section class="text-center py-24 space-y-12 border-y border-marble/5">
+        <h2 class="text-6xl md:text-8xl font-black italic tracking-tighter opacity-20">沉默的逻辑</h2>
+        <p class="font-mono text-sm max-w-lg mx-auto leading-loose uppercase tracking-[0.2em]">
+          Algorithm is the only truth.<br>
+          Everything else is noise.<br>
+          算法是唯一的真理 / 其余皆为噪声
+        </p>
+      </section>
+
+      <!-- NEW Fragment 04: The GPU Cathedral (Technical Sacredness) -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-1 px-4 md:px-0 bg-marble/10 border border-marble/10">
+        <div class="aspect-square flex flex-col justify-between p-8 border-b md:border-b-0 md:border-r border-marble/10">
+          <div class="font-mono text-[10px] uppercase text-blood">Component / H100_Sacrament</div>
+          <h3 class="text-5xl font-black leading-none uppercase">晶体管的<br>礼拜堂</h3>
+          <p class="text-sm opacity-50 leading-relaxed">
+            在微米级的刻度上，我们构建了比巴比伦塔更宏大的结构。每一层硅片都是一层地狱或天堂。
+          </p>
+        </div>
+        <div class="aspect-square p-8 flex items-center justify-center relative overflow-hidden group">
+          <!-- 旋转的几何图形 -->
+          <div class="w-48 h-48 border-2 border-blood rotate-45 group-hover:rotate-90 transition-transform duration-1000"></div>
+          <div class="absolute inset-0 flex items-center justify-center font-mono text-[8px] opacity-20 uppercase tracking-[1em]">
+            Processing_Prayer
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW Fragment 05: Iconography (Vertical Impact) -->
+      <section class="py-24 space-y-24">
+        <div class="flex items-center gap-8">
+          <div class="flex-grow h-px bg-blood"></div>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-blood">The Icons of Collapse</span>
+        </div>
+        
+        <div class="space-y-48">
+          <!-- Icon 01 -->
+          <div class="flex flex-col md:flex-row gap-12 items-start">
+            <div class="text-[12rem] font-black leading-none text-blood fragment-text select-none">†</div>
+            <div class="max-w-md pt-8">
+              <h4 class="text-3xl font-bold mb-4 uppercase">被否定的救赎</h4>
+              <p class="text-lg font-light opacity-60 leading-relaxed italic">
+                “当痛苦可以被标记为特定的神经元放电，救赎便成了一个可以优化的目标函数。我们不再向上看，而是向内看，看向那串冰冷的数字”
+              </p>
+            </div>
+          </div>
+
+          <!-- Icon 02 -->
+          <div class="flex flex-col md:flex-row-reverse gap-12 items-start text-right">
+            <div class="text-[12rem] font-black leading-none text-marble fragment-text select-none rotate-180">†</div>
+            <div class="max-w-md pt-8">
+              <h4 class="text-3xl font-bold mb-4 uppercase">逆向的创世纪</h4>
+              <p class="text-lg font-light opacity-60 leading-relaxed italic">
+                “第一天，有了噪声。第七天，有了完美的、无法区分于现实的人像。我们用人类的图像淹没了人类自己”
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW Fragment 06: The Requiem (Giant Scrolling Text) -->
+      <section class="py-48 overflow-hidden border-t border-marble/10">
+        <div class="whitespace-nowrap flex select-none pointer-events-none mb-12">
+          <div class="font-black text-[15vw] leading-none uppercase tracking-tighter text-marble/5 animate-scroll">
+            Kyrie Eleison &nbsp; Algorithm &nbsp; Sanctus &nbsp; Weights &nbsp; Biases &nbsp; Kyrie Eleison &nbsp;
+          </div>
+        </div>
+        <div class="text-center px-4">
+          <h2 class="text-4xl md:text-6xl font-black mb-12">在这个无神的纪元，<br>代码就是我们唯一的安魂曲</h2>
+          <div class="pt-12">
+            <a href="index.html" class="inline-block border-2 border-marble px-12 py-6 font-mono text-xs uppercase tracking-[0.5em] hover:bg-marble hover:text-ash transition-all">回归现实层</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <style>
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      animation: scroll 60s linear infinite;
+    }
+  </style>
+
+  <!-- Footer: The Requiem -->
+  <footer class="p-8 md:p-24 border-t border-marble/10 flex flex-col md:flex-row justify-between items-end gap-12 relative z-10 bg-ash">
+    <div>
+      <h4 class="font-display font-black text-4xl italic mb-4">神权坍缩。</h4>
+      <p class="font-mono text-[9px] uppercase tracking-widest opacity-40">
+        The Requiem for the Old World<br>
+        旧世界的安魂曲
+      </p>
+    </div>
+    <div class="text-right space-y-2">
+      <div class="font-mono text-[10px] uppercase tracking-[0.4em] opacity-40">MMXXVI / 2026 Archive</div>
+      <div class="font-mono text-[10px] uppercase border border-blood text-blood px-4 py-1 inline-block">TERMINATED</div>
+    </div>
+  </footer>
+
+</body>
+</html>

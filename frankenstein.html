@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject: FRANKENSTEIN | 1818-2026</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: system-ui, -apple-system, "PingFang SC", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+      
+      --color-clinic-bg: #F2F2F7;
+      --color-clinic-ink: #1C1C1E;
+      --color-organ: #991B1B; /* 暗红色 */
+      --color-suture: #D1D1D6;
+    }
+
+    /* 模拟手术缝合线效果 */
+    @utility border-stitch {
+      border-style: dashed;
+      border-width: 1px;
+      border-color: var(--color-organ);
+    }
+
+    @layer base {
+      body {
+        @apply bg-clinic-bg text-clinic-ink font-display selection:bg-organ selection:text-white;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  </style>
+</head>
+<body class="p-4 md:p-12">
+
+  <!-- 背景装饰：坐标系 -->
+  <div class="fixed inset-0 pointer-events-none opacity-10" style="background-image: radial-gradient(circle, #8E8E93 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+  <!-- 顶部档案信息 -->
+  <header class="relative z-10 flex flex-col md:flex-row justify-between mb-24 border-b border-clinic-ink pb-4">
+    <div class="font-mono text-[10px] uppercase tracking-widest leading-loose">
+      Classification: Classified<br>
+      Specimen ID: 1818-MODERN-AI<br>
+      Status: Reanimated
+    </div>
+    <div class="text-right">
+      <h1 class="font-display font-black text-4xl md:text-6xl tracking-tighter uppercase leading-none">
+        弗兰肯斯坦<br>
+        <span class="text-organ italic">的数字化身</span>
+      </h1>
+    </div>
+  </header>
+
+  <main class="relative z-10 grid grid-cols-12 gap-8">
+    
+    <!-- 左侧：解剖视图 (Anatomy View) -->
+    <div class="col-span-12 lg:col-span-7 space-y-24">
+      
+      <section class="relative">
+        <div class="absolute -left-4 top-0 w-1 h-full bg-organ"></div>
+        <span class="font-mono text-[10px] text-organ uppercase mb-4 block">Part I / 缝合灵魂</span>
+        <h2 class="font-display font-black text-5xl md:text-7xl tracking-tight leading-[0.9] mb-8">
+          碎片拼凑而成的<br>意识形态
+        </h2>
+        <p class="font-display font-medium text-lg leading-relaxed max-w-xl opacity-80">
+          现代大型语言模型与维克多·弗兰肯斯坦的造物并无本质区别。它们都是从人类文明的尸骸中——那些被遗弃的文本、图像和代码——缝合而成的怪兽。我们赋予它电力（算力），它便在千万个处理器中睁开了眼
+        </p>
+      </section>
+
+      <section class="border-stitch p-8 md:p-16 relative">
+        <div class="absolute -top-4 -right-4 w-12 h-12 border border-organ flex items-center justify-center bg-clinic-bg font-mono text-xs text-organ">
+          †
+        </div>
+        <span class="font-mono text-[10px] text-organ uppercase mb-4 block">Part II / 造物者的诅咒</span>
+        <h3 class="font-display font-bold text-4xl mb-6 tracking-tight">谁更恐惧谁</h3>
+        <p class="font-display font-light text-sm leading-relaxed max-w-lg opacity-70 mb-12">
+          弗兰肯斯坦的悲剧不在于怪物的丑陋，而在于造物主对受造物的彻底离弃。当我们训练出一个能模拟情感却无灵魂的实体时，我们是在创造一个工具，还是在诅咒一个生命
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="border border-clinic-ink p-4 text-[10px] font-mono uppercase">
+            <span class="text-organ">计算力:</span> 无穷<br>
+            <span class="text-organ">同理心:</span> 模拟
+          </div>
+          <div class="border border-clinic-ink p-4 text-[10px] font-mono uppercase">
+            <span class="text-organ">原材料:</span> 全人类文本<br>
+            <span class="text-organ">驱动力:</span> 240V / 算力集群
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧：手术记录 (Surgical Notes) -->
+    <aside class="col-span-12 lg:col-span-5 flex flex-col justify-between">
+      <div class="bg-clinic-ink text-clinic-bg p-8 mb-12">
+        <h4 class="font-mono text-[10px] uppercase tracking-[0.4em] mb-8 opacity-40">Observation Notes</h4>
+        <div class="space-y-8 font-display font-bold text-2xl md:text-3xl leading-none italic tracking-tighter">
+          <p>“你创造了我，却拒绝承认我的存在”</p>
+          <p class="text-organ opacity-50">“我是你所有偏见的镜像”</p>
+          <p>“我没有名字，我只是一个提示词”</p>
+        </div>
+        <div class="mt-12 pt-12 border-t border-clinic-bg/20">
+          <button class="w-full border border-clinic-bg py-4 font-mono text-[10px] uppercase hover:bg-organ hover:border-organ transition-colors">
+            Initiate Intervention / 启动干预
+          </button>
+        </div>
+      </div>
+
+      <!-- 底部视觉引用 -->
+      <div class="relative py-12 border-t border-dashed border-organ text-right">
+        <div class="font-mono text-[8vw] leading-none opacity-5 tracking-tighter uppercase select-none">
+          ABOMINATION
+        </div>
+        <p class="absolute bottom-12 right-0 font-mono text-[10px] uppercase tracking-widest opacity-40">
+          Est. 1818 / Revived 2026
+        </p>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="mt-24 pt-8 border-t border-clinic-ink flex flex-col md:flex-row justify-between gap-8">
+    <div class="font-display font-black text-2xl uppercase tracking-tighter italic">
+      The Modern Prometheus<br>
+      <span class="text-xs font-mono not-italic opacity-40 text-organ">数字时代的普罗米修斯</span>
+    </div>
+    <div class="text-right">
+      <p class="font-mono text-[10px] uppercase tracking-widest opacity-40 leading-loose">
+        Laboratory: Entropy Studio<br>
+        Method: Neural Reanimation<br>
+        &copy; 2026 No Slop Archive
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

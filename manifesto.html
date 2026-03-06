@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Post-AI Manifesto | v4.2</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- 仅保留 JetBrains Mono 用于标注 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @theme {
+      /* 使用 Apple 系统字体栈：San Francisco & PingFang SC */
+      --font-display: system-ui, -apple-system, "PingFang SC", "STHeiti", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+      --font-sans: system-ui, -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+
+      --color-ink: #0A0A0A;
+      --color-paper: #F5F2ED;
+      --color-accent: #C2410C; 
+      
+      --spacing-safe: clamp(1.5rem, 8vw, 6rem);
+    }
+
+    /* 模拟印刷质感的噪点背景 */
+    @utility texture-grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3%3FfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3%3F/filter%3%3F%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3%3F/svg%3E");
+      opacity: 0.03;
+    }
+
+    @layer base {
+      body {
+        @apply bg-paper text-ink selection:bg-accent selection:text-white;
+        /* Apple 字体在不同粗细下的排版优化 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+  
+  <!-- 噪点层 -->
+  <div class="fixed inset-0 pointer-events-none texture-grain z-50"></div>
+
+  <!-- 极简非对称导航 -->
+  <nav class="flex justify-between items-start p-safe mix-blend-multiply relative z-10">
+    <div class="font-mono text-[10px] uppercase tracking-[0.3em] leading-none">
+      Entropy Vol. 001<br>
+      <span class="opacity-50">后人工智能时代</span>
+    </div>
+    <div class="text-right">
+      <div class="font-sans font-bold italic text-2xl tracking-tighter">Manifesto</div>
+      <div class="font-mono text-[10px] mt-2 group cursor-pointer">
+        [ <span class="group-hover:text-accent transition-colors">溯源</span> ]
+      </div>
+    </div>
+  </nav>
+
+  <!-- 非对称 Hero 区域 -->
+  <header class="px-safe pb-24 relative z-10">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-12 lg:col-span-8">
+        <h1 class="font-display font-black text-[clamp(3rem,10vw,8rem)] leading-[0.95] tracking-[-0.05em]">
+          奇点之后的<br>
+          <span class="italic text-accent">余温</span>
+        </h1>
+      </div>
+      <div class="col-span-12 lg:col-span-4 flex flex-col justify-end pb-4">
+        <p class="font-sans font-medium text-sm leading-relaxed max-w-xs opacity-70">
+          当计算趋于无穷，唯一有价值的是那些无法被计算的时刻。我们在算法的废墟中寻找诗意，在绝对的逻辑中锚定一丝有意的错误
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 物理线条分割线 -->
+  <div class="mx-safe border-t border-ink/15"></div>
+
+  <!-- 内容展示 -->
+  <section class="p-safe grid grid-cols-12 gap-y-12 lg:gap-y-0 relative z-10">
+    
+    <div class="col-span-12 lg:col-span-3 lg:border-r lg:border-ink/10 lg:pr-8">
+      <span class="font-mono text-[10px] uppercase block mb-8">01 / 存在论</span>
+      <h2 class="font-display font-bold text-4xl mb-4 tracking-tight">机器中的幽灵</h2>
+      <p class="font-sans text-sm leading-relaxed opacity-80">
+        智能不再是稀缺品，而是一种背景噪音。美的本质不再是“解决问题”，而是创造出一种深刻的、无法被预测的“共振”
+      </p>
+    </div>
+
+    <div class="col-span-12 lg:col-start-5 lg:col-span-3 lg:border-r lg:border-ink/10 lg:pr-8">
+      <span class="font-mono text-[10px] uppercase block mb-8">02 / 认识论</span>
+      <h2 class="font-display font-bold text-4xl mb-4 tracking-tight">错误的赞歌</h2>
+      <p class="font-sans text-sm leading-relaxed opacity-80">
+        完美是平庸的代名词。我们拒绝算法推荐的路径，转而拥抱那些充满瑕疵的、原始的直觉。每一个像素的偏移，都是生命存在的证明
+      </p>
+    </div>
+
+    <div class="col-span-12 lg:col-start-9 lg:col-span-4">
+      <span class="font-mono text-[10px] uppercase block mb-8">03 / 伦理学</span>
+      <h2 class="font-display font-bold text-4xl mb-4 tracking-tight">有意的摩擦</h2>
+      <p class="font-sans text-sm leading-relaxed opacity-80 mb-8">
+        交互不应只是“顺滑”。我们创造阻碍，让使用者停顿、思考。在效率至死的时代，缓慢本身就是一种最高级的反叛
+      </p>
+      <button class="font-mono text-[10px] uppercase border border-ink px-6 py-3 hover:bg-ink hover:text-paper transition-all duration-300">
+        阅读宣言全文 →
+      </button>
+    </div>
+
+  </section>
+
+  <!-- 大尺寸视觉冲击 -->
+  <section class="mt-24 relative overflow-hidden bg-ink py-40">
+    <div class="absolute inset-0 opacity-20 texture-grain"></div>
+    <div class="whitespace-nowrap overflow-hidden flex select-none pointer-events-none">
+      <div class="font-sans font-black text-[15vw] text-paper/5 leading-none uppercase tracking-tighter animate-scroll">
+        Incomputable &nbsp; Organic &nbsp; Finite &nbsp; Sacred &nbsp; 非计算的 &nbsp; 有机的 &nbsp; 有限的 &nbsp; 神圣的 &nbsp;
+      </div>
+    </div>
+    <div class="relative z-10 px-safe flex justify-center">
+      <div class="max-w-2xl text-center">
+        <h3 class="font-display font-bold text-paper text-5xl md:text-7xl leading-tight italic mb-8 tracking-tighter">
+          设计是人类面对无限计算力时，最后的一道防线
+        </h3>
+        <p class="font-mono text-[10px] text-paper/40 uppercase tracking-[0.4em]">
+          拒绝平庸的顺从
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 04: The Archive -->
+  <section class="py-24 px-safe relative z-10">
+    <div class="flex justify-between items-end mb-12 border-b border-ink pb-4">
+      <h2 class="font-display font-bold text-5xl italic tracking-tighter">档案 / Archive</h2>
+      <span class="font-mono text-[10px] uppercase opacity-50">Vol. 2024—2026</span>
+    </div>
+    
+    <div class="divide-y divide-ink/10">
+      <a href="#" class="group py-12 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-ink hover:text-paper transition-colors px-4 -mx-4">
+        <div class="flex items-baseline gap-6">
+          <span class="font-mono text-xs opacity-40">01</span>
+          <h3 class="font-display font-black text-5xl md:text-7xl tracking-tighter transition-all">有机碎片的余响</h3>
+        </div>
+        <div class="font-mono text-[10px] uppercase tracking-widest mt-4 md:mt-0 opacity-0 group-hover:opacity-100 transition-opacity">
+          溯源项目 [→]
+        </div>
+      </a>
+      
+      <a href="#" class="group py-12 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-ink hover:text-paper transition-colors px-4 -mx-4">
+        <div class="flex items-baseline gap-6">
+          <span class="font-mono text-xs opacity-40">02</span>
+          <h3 class="font-display font-black text-5xl md:text-7xl tracking-tighter transition-all">非线性叙事实验</h3>
+        </div>
+        <div class="font-mono text-[10px] uppercase tracking-widest mt-4 md:mt-0 opacity-0 group-hover:opacity-100 transition-opacity">
+          溯源项目 [→]
+        </div>
+      </a>
+
+      <a href="#" class="group py-12 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-ink hover:text-paper transition-colors px-4 -mx-4">
+        <div class="flex items-baseline gap-6">
+          <span class="font-mono text-xs opacity-40">03</span>
+          <h3 class="font-display font-black text-5xl md:text-7xl tracking-tighter transition-all">等宽逻辑的崩塌</h3>
+        </div>
+        <div class="font-mono text-[10px] uppercase tracking-widest mt-4 md:mt-0 opacity-0 group-hover:opacity-100 transition-opacity">
+          溯源项目 [→]
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 05: Sticky Split Showcase -->
+  <section class="grid grid-cols-1 lg:grid-cols-2 relative z-10 border-t border-ink/10">
+    <div class="lg:sticky lg:top-0 lg:h-screen p-safe flex flex-col justify-between bg-accent text-paper">
+      <h2 class="font-display font-black text-[15vw] lg:text-[8vw] leading-[0.85] tracking-tighter">
+        生而<br>有憾
+      </h2>
+      <div class="font-sans font-bold text-sm leading-relaxed max-w-xs opacity-80">
+        “生而有憾”是人类唯一的特权。机器永远无法理解错失的遗憾，因为在它们的世界里，一切皆可重算
+      </div>
+    </div>
+    <div class="p-safe space-y-32 py-32">
+      <div class="max-w-md">
+        <span class="font-mono text-[10px] uppercase text-accent block mb-8 underline decoration-2 underline-offset-4">维度 A / 空间的有限性</span>
+        <h4 class="font-display font-bold text-4xl mb-6 tracking-tight">垂直性与平衡</h4>
+        <p class="font-sans text-lg leading-relaxed opacity-70">
+          我们利用视口的完整高度来制造元素间的张力。美存在于留白与密集信息之间的博弈中
+        </p>
+      </div>
+      <div class="max-w-md">
+        <span class="font-mono text-[10px] uppercase text-accent block mb-8 underline decoration-2 underline-offset-4">维度 B / 知觉的边界</span>
+        <h4 class="font-display font-bold text-4xl mb-6 tracking-tight">有意的迟滞</h4>
+        <p class="font-sans text-lg leading-relaxed opacity-70">
+          用户体验不应总是“无缝”的。有时，必要的迟滞能让使用者审视内容本身的重量，而非仅仅是消费它
+        </p>
+      </div>
+      <div class="max-w-md">
+        <span class="font-mono text-[10px] uppercase text-accent block mb-8 underline decoration-2 underline-offset-4">维度 C / 灵性的火花</span>
+        <h4 class="font-display font-bold text-4xl mb-6 tracking-tight">神圣的人为错误</h4>
+        <p class="font-sans text-lg leading-relaxed opacity-70">
+          完美的网格是无聊的。我们引入细微的偏移和不可预测的对齐方式，提醒观者：这是由一个充满灵性的“人”亲手打磨的体验
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 06: Giant CTA -->
+  <section class="py-48 px-safe text-center relative z-10 overflow-hidden">
+    <div class="font-mono text-[10px] uppercase tracking-[0.5em] mb-12 opacity-50">准备好打破陈规了吗？</div>
+    <a href="mailto:intervene@entropy.io" class="block group relative">
+      <span class="font-display font-black text-[15vw] leading-none tracking-tighter transition-all duration-700 group-hover:text-accent">
+        干预计划
+      </span>
+      <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div class="w-32 h-32 rounded-full bg-accent/20 blur-2xl animate-pulse"></div>
+      </div>
+    </a>
+  </section>
+
+  <footer class="p-safe flex flex-col md:flex-row justify-between items-end gap-8 border-t border-ink/10">
+    <div class="font-display font-bold italic text-4xl tracking-tighter">后人工智能宣言</div>
+    <div class="font-mono text-[9px] uppercase tracking-widest leading-loose text-right">
+      Built with Tailwind v4.2<br>
+      无魔法。只有代码。<br>
+      &copy; 2026 熵增工作室
+    </div>
+  </footer>
+
+  <style>
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      animation: scroll 40s linear infinite;
+    }
+  </style>
+
+</body>
+</html>
