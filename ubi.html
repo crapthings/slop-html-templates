@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBI: The Human Patch | v4.2</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;800&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
+    @theme {
+      --font-display: system-ui, -apple-system, "PingFang SC", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+      
+      --color-public-blue: #2563EB;
+      --color-concrete: #E5E7EB;
+      --color-alert: #F97316;
+      --color-ink: #0F172A;
+    }
+
+    /* 模拟公共设施的条纹装饰 */
+    @utility bg-hazard {
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(249, 115, 22, 0.1) 10px,
+        rgba(249, 115, 22, 0.1) 20px
+      );
+    }
+
+    @layer base {
+      body {
+        @apply bg-concrete text-ink font-display selection:bg-public-blue selection:text-white;
+        -webkit-font-smoothing: antialiased;
+      }
+      * { @apply rounded-none; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- TOP BAR: Public Notice -->
+  <header class="bg-public-blue text-white p-4 md:p-8 flex justify-between items-center border-b-8 border-ink">
+    <div class="flex items-center gap-4">
+      <div class="w-6 h-6 bg-white animate-pulse"></div>
+      <h1 class="font-mono font-extrabold text-2xl uppercase tracking-tighter">Universal Basic Income <span class="opacity-50">/ 0.1.0</span></h1>
+    </div>
+    <div class="hidden md:block font-mono text-[10px] uppercase tracking-widest text-right">
+      Protocol: Post-Labor Era<br>
+      Status: Distribution_Active
+    </div>
+  </header>
+
+  <main class="flex-grow grid grid-cols-1 lg:grid-cols-12 bg-hazards">
+    
+    <!-- Left: Policy Statement (Brutalist Typography) -->
+    <div class="lg:col-span-8 p-8 md:p-16 border-r-4 border-ink space-y-24 bg-white relative">
+      <div class="absolute top-0 right-0 p-8 opacity-5 select-none pointer-events-none text-[30vw] font-black leading-none">UBI</div>
+      
+      <section>
+        <span class="font-mono text-xs font-bold text-public-blue mb-4 block underline underline-offset-4">ARTICLE 01 / 劳动之死</span>
+        <h2 class="text-6xl md:text-[8rem] font-black leading-[0.85] tracking-tighter mb-12">
+          不再为<br>生存而<span class="italic text-public-blue">劳动</span>
+        </h2>
+        <p class="text-2xl font-bold leading-tight max-w-2xl">
+          当机器接管了所有的算法与汗水，人类终于被从“为了活着而工作”的诅咒中释放。UBI 不是施舍，而是数字文明的股东分红
+        </p>
+      </section>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-24 border-t-2 border-ink">
+        <div class="space-y-6">
+          <h3 class="text-4xl font-black uppercase tracking-tight">机器的<br>补偿金</h3>
+          <p class="text-sm opacity-60 leading-relaxed font-medium">
+            我们利用 AI 产生的盈余，为每一个灵魂打上基本的安全补丁。这种分配是绝对的、无条件的、且基于纯粹的数学公平
+          </p>
+        </div>
+        <div class="space-y-6">
+          <h3 class="text-4xl font-black uppercase tracking-tight">创造力的<br>解放</h3>
+          <p class="text-sm opacity-60 leading-relaxed font-medium">
+            当生存不再是问题，人类唯一的职责就是去体验、去创造、去犯错。真正的艺术，只在没有压力的土壤中萌芽
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Distribution Stats & Interaction -->
+    <aside class="lg:col-span-4 flex flex-col">
+      <div class="p-8 bg-alert text-white flex-grow border-b-4 border-ink">
+        <h4 class="font-mono text-xs font-bold uppercase mb-12 tracking-widest">Status: Active Distribution</h4>
+        <div class="space-y-12">
+          <div>
+            <div class="text-[10px] uppercase font-bold mb-2">Monthly_Grant</div>
+            <div class="text-6xl font-black tracking-tighter">€1,200.00</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-bold mb-2">Coverage</div>
+            <div class="text-6xl font-black tracking-tighter">100.00%</div>
+          </div>
+        </div>
+        <div class="mt-24">
+          <button class="w-full bg-ink text-white py-6 font-mono font-bold uppercase hover:bg-white hover:text-ink transition-all text-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,0.3)] active:translate-x-1 active:translate-y-1 active:shadow-none">
+            Claim Your Patch / 领取补丁
+          </button>
+        </div>
+      </div>
+      
+      <!-- Public Notice Box -->
+      <!-- Public Notice Box -->
+      <div class="p-8 bg-white border-b-4 border-ink flex-grow bg-hazard">
+        <div class="font-mono text-[10px] uppercase font-bold text-alert mb-4 tracking-widest">[ WARNING ]</div>
+        <p class="text-xs font-bold leading-relaxed">
+          全民基本收入（UBI）是一项系统级实验。它旨在消除贫困，而非消除不平等。请在保证人类尊严的前提下合理支配您的补丁
+        </p>
+      </div>
+      </aside>
+      </main>
+
+      <!-- Section: The Ledger (Real-time Distribution Log) -->
+      <section class="border-x-8 border-ink bg-white">
+      <div class="p-8 border-b-4 border-ink flex justify-between items-center bg-concrete">
+      <h3 class="font-mono text-xs font-black uppercase tracking-widest">Live_Distribution_Ledger</h3>
+      <div class="flex gap-4">
+        <div class="w-2 h-2 bg-public-blue rounded-full animate-ping"></div>
+        <span class="font-mono text-[10px] uppercase font-bold">Syncing_Global_Network</span>
+      </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x-2 divide-ink/10 overflow-hidden">
+      <div class="p-6 space-y-2">
+        <div class="font-mono text-[9px] opacity-40">TX_ID: 0x82...F2</div>
+        <div class="text-xl font-black">+ €1,200.00</div>
+        <div class="font-mono text-[9px] uppercase font-bold text-public-blue text-right">Confirmed</div>
+      </div>
+      <div class="p-6 space-y-2">
+        <div class="font-mono text-[9px] opacity-40">TX_ID: 0x41...A9</div>
+        <div class="text-xl font-black">+ €1,200.00</div>
+        <div class="font-mono text-[9px] uppercase font-bold text-public-blue text-right">Confirmed</div>
+      </div>
+      <div class="p-6 space-y-2">
+        <div class="font-mono text-[9px] opacity-40">TX_ID: 0x12...E1</div>
+        <div class="text-xl font-black">+ €1,200.00</div>
+        <div class="font-mono text-[9px] uppercase font-bold text-public-blue text-right">Confirmed</div>
+      </div>
+      <div class="p-6 space-y-2 bg-public-blue/5">
+        <div class="font-mono text-[9px] opacity-40">TX_ID: 0x99...BC</div>
+        <div class="text-xl font-black">+ €1,200.00</div>
+        <div class="font-mono text-[9px] uppercase font-bold text-public-blue text-right animate-pulse">Processing</div>
+      </div>
+      </div>
+      </section>
+
+      <!-- Section: The New Daily (Life Beyond 9-to-5) -->
+      <section class="border-8 border-t-0 border-ink bg-white grid grid-cols-1 md:grid-cols-12">
+      <div class="md:col-span-4 p-8 md:p-16 bg-ink text-white space-y-12">
+      <h2 class="text-5xl font-black tracking-tighter leading-none">劳动之后<br>的晨曦</h2>
+      <p class="font-mono text-xs leading-relaxed opacity-60 uppercase tracking-widest">
+        当闹钟不再是为了打卡而响起，人类开始重新学习如何度过一天的 24 小时。
+      </p>
+      <div class="h-px bg-white/20 w-full"></div>
+      <div class="font-mono text-[10px] uppercase font-bold">
+        Status: Liberation_Phase_01
+      </div>
+      </div>
+      <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2">
+      <div class="p-8 md:p-12 border-b md:border-b-2 border-ink/10 group hover:bg-public-blue hover:text-white transition-colors">
+        <span class="font-mono text-xs font-bold block mb-6 opacity-40">01 / 自愿创造</span>
+        <h4 class="text-3xl font-black mb-4">无目的之诗</h4>
+        <p class="text-sm leading-relaxed font-medium">
+          人们开始写作、绘画和编程，不是为了变现，而是为了表达。艺术回归了它最初的形态：一种纯粹的生命冲动。
+        </p>
+      </div>
+      <div class="p-8 md:p-12 border-b md:border-b-2 border-l-0 md:border-l-2 border-ink/10 group hover:bg-alert hover:text-white transition-colors">
+        <span class="font-mono text-xs font-bold block mb-6 opacity-40">02 / 深度社群</span>
+        <h4 class="text-3xl font-black mb-4">重构附近性</h4>
+        <p class="text-sm leading-relaxed font-medium">
+          邻里间的互助不再建立在利益交换之上。社群的纽带被重新编织，孤独感在充足的空闲时间中消散。
+        </p>
+      </div>
+      <div class="p-8 md:p-12 border-ink/10 group hover:bg-ink hover:text-white transition-colors md:border-r-2">
+        <span class="font-mono text-xs font-bold block mb-8 opacity-40">03 / 知性探索</span>
+        <h4 class="text-3xl font-black mb-4">终身学徒制</h4>
+        <p class="text-sm leading-relaxed font-medium">
+          学习不再是通往职业的敲门砖，而是灵魂的日常给养。每一个公民都是好奇心的终身追随者。
+        </p>
+      </div>
+      <div class="p-8 md:p-12 border-ink/10 bg-hazard/20 flex items-center justify-center">
+        <div class="text-center">
+          <div class="font-mono text-5xl font-black mb-2 italic">24/7</div>
+          <div class="font-mono text-[10px] uppercase font-black tracking-widest">Human Freedom</div>
+        </div>
+      </div>
+      </div>
+      </section>
+
+      <!-- Section: Protocol Breakdown (Smart Contract Visualization) -->
+      <section class="border-x-8 border-b-8 border-ink p-8 md:p-24 bg-white relative overflow-hidden">
+      <div class="absolute -right-24 -bottom-24 w-96 h-96 border-[40px] border-public-blue/5 rounded-full"></div>
+      <div class="max-w-4xl relative z-10">
+      <h3 class="text-4xl md:text-6xl font-black tracking-tighter mb-12 uppercase">智能合约<br><span class="text-public-blue">补丁协议</span></h3>
+
+      <div class="space-y-4 font-mono text-xs">
+        <div class="p-4 bg-concrete/50 flex justify-between items-center group hover:bg-ink hover:text-white transition-colors cursor-crosshair">
+          <span>&lt;condition&gt; Proof_of_Existence &lt;/condition&gt;</span>
+          <span class="font-bold">[ PASS ]</span>
+        </div>
+        <div class="p-4 bg-concrete/50 flex justify-between items-center group hover:bg-ink hover:text-white transition-colors cursor-crosshair">
+          <span>&lt;condition&gt; Surplus_Resource_Allocation &lt;/condition&gt;</span>
+          <span class="font-bold">[ PASS ]</span>
+        </div>
+        <div class="p-4 bg-concrete/50 flex justify-between items-center group hover:bg-ink hover:text-white transition-colors cursor-crosshair">
+          <span>&lt;condition&gt; Human_Dignity_Minimum &lt;/condition&gt;</span>
+          <span class="font-bold">[ VALIDATED ]</span>
+        </div>
+      </div>
+
+      <div class="mt-16 flex flex-col md:flex-row gap-8 items-center">
+        <div class="p-8 border-4 border-ink flex-grow text-center">
+          <div class="text-[10px] uppercase font-bold mb-4 opacity-40">Total_Distributed_Surplus</div>
+          <div class="text-5xl font-black tracking-tighter">€4.2 Trillion</div>
+        </div>
+        <div class="p-8 border-4 border-public-blue flex-grow text-center text-public-blue">
+          <div class="text-[10px] uppercase font-bold mb-4">Social_Stability_Index</div>
+          <div class="text-5xl font-black tracking-tighter">99.8%</div>
+        </div>
+      </div>
+      </div>
+      </section>
+
+      <!-- Footer: System Integrity -->
+
+  <footer class="bg-ink text-white p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8">
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 bg-public-blue"></div>
+      <div>
+        <h4 class="font-black text-2xl uppercase tracking-tighter">The Human Patch.</h4>
+        <p class="font-mono text-[9px] uppercase tracking-widest opacity-40">System Architecture: Social Contract v2.0</p>
+      </div>
+    </div>
+    <div class="text-center md:text-right">
+      <a href="index.html" class="font-mono text-[10px] uppercase border border-white/20 px-6 py-2 hover:bg-white hover:text-ink transition-colors">Return to Directory</a>
+      <p class="font-mono text-[9px] mt-4 opacity-40 uppercase tracking-widest">
+        &copy; 2026 Entropy Public Works / No Slop Archive
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

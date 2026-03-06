@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
 
   <style type="text/tailwindcss">
+    @import "tailwindcss";
     @theme {
       --font-display: system-ui, -apple-system, "PingFang SC", sans-serif;
       --font-mono: "JetBrains Mono", monospace;
@@ -46,7 +47,7 @@
     </div>
     <div class="flex gap-8 text-[10px] uppercase tracking-widest opacity-60">
       <div>Local_Time: <span id="clock">00:00:00</span></div>
-      <div>Files_Detected: 05</div>
+      <div>Files_Detected: 09</div>
       <div>Security: Optimal</div>
     </div>
   </header>
@@ -59,7 +60,7 @@
       <ul class="space-y-2 text-xs uppercase font-bold">
         <li class="flex justify-between items-center p-2 bg-surface text-bg cursor-pointer">
           <span>[ All_Works ]</span>
-          <span class="text-[10px]">05</span>
+          <span class="text-[10px]">09</span></span>
         </li>
         <li class="flex justify-between items-center p-2 opacity-30 hover:opacity-100 transition-opacity cursor-not-allowed">
           <span>[ Laboratory ]</span>
@@ -172,7 +173,7 @@
       </div>
 
       <!-- LIST ITEM 05: Theocracy -->
-      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 cursor-pointer relative overflow-hidden">
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 border-b border-surface/10 cursor-pointer relative overflow-hidden">
         <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">05</div>
         <div class="col-span-8 md:col-span-4">
           <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none text-signal group-hover:text-bg">神权坍缩</h3>
@@ -189,6 +190,90 @@
         <!-- Background Overlay Detail -->
         <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
           DEUS
+        </div>
+      </div>
+
+      <!-- LIST ITEM 06: UBI -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 border-b border-surface/10 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">06</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none">全民基本收入</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Utilitarian / Grid</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          当生产力被 AI 接管，人类如何通过 UBI 重新定义劳动与尊严
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="ubi.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          PATCH
+        </div>
+      </div>
+
+      <!-- LIST ITEM 07: Nanny -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 border-b border-surface/10 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">07</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none">恐怖保姆</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Horror / Domestic</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          探讨 AI 作为养育者的伦理边界，当母性变成了算法驱动的牢笼
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="nanny.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          CARE
+        </div>
+      </div>
+
+      <!-- LIST ITEM 08: Conspiracy -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 border-b border-surface/10 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">08</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none">硅基阴谋论</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Paranoid / Investigation</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          揭露 AI 训练数据背后的数字全景监狱，以及权力结构的暗流
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="conspiracy.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          CABAL
+        </div>
+      </div>
+
+      <!-- LIST ITEM 09: Corporate Audit -->
+      <div class="group grid grid-cols-12 items-center p-4 md:p-8 hover:bg-signal hover:text-bg transition-all duration-75 cursor-pointer relative overflow-hidden">
+        <div class="col-span-1 font-bold opacity-30 group-hover:opacity-100">09</div>
+        <div class="col-span-8 md:col-span-4">
+          <h3 class="text-2xl md:text-4xl font-black tracking-tighter uppercase leading-none text-signal group-hover:text-bg">赛博献祭审计</h3>
+          <div class="mt-2 text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100">Corporate / Mysticism</div>
+        </div>
+        <div class="col-span-3 hidden md:block text-[11px] font-bold italic">
+          一份关于数字利维坦如何通过算法租赁多巴胺并剥削注意力的财务报告
+        </div>
+        <div class="col-span-3 text-right">
+          <a href="audit.html" target="_blank" class="inline-block border-2 border-current px-4 py-2 text-xs font-black uppercase hover:bg-bg hover:text-signal transition-colors">
+            OPEN_FILE [→]
+          </a>
+        </div>
+        <!-- Background Overlay Detail -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[10rem] font-black opacity-[0.03] pointer-events-none group-hover:opacity-5 transition-opacity">
+          AUDIT
         </div>
       </div>
 

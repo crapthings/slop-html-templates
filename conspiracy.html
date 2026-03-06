@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLASSIFIED: THE SILICON CABAL | v4.2</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=JetBrains+Mono:wght@300;700&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
+    @theme {
+      --font-typewriter: "Special Elite", system-ui, serif;
+      --font-mono: "JetBrains Mono", monospace;
+      
+      --color-paper: #E7E5E4;
+      --color-ink: #1C1917;
+      --color-alert: #EF4444; /* 调查红线 */
+    }
+
+    @utility redacted {
+      @apply bg-ink text-transparent select-none transition-colors duration-300;
+      &:hover { @apply bg-transparent text-alert; }
+    }
+
+    @utility tape-mark {
+      background: rgba(0,0,0,0.05);
+      border-left: 2px solid rgba(0,0,0,0.1);
+      border-right: 2px solid rgba(0,0,0,0.1);
+      transform: rotate(-2deg);
+    }
+
+    @layer base {
+      body {
+        @apply bg-paper text-ink font-typewriter selection:bg-alert selection:text-white;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3%3FfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3%3F/filter%3%3F%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3%3F/svg%3E");
+        background-attachment: fixed;
+      }
+    }
+  </style>
+</head>
+<body class="p-4 md:p-12 overflow-x-hidden">
+
+  <!-- SVG Overlay for Red Lines -->
+  <svg class="fixed inset-0 w-full h-full pointer-events-none z-40 opacity-40" xmlns="http://www.w3.org/2000/svg">
+    <line x1="10%" y1="10%" x2="90%" y2="90%" stroke="#EF4444" stroke-width="1" />
+    <line x1="80%" y1="20%" x2="20%" y2="70%" stroke="#EF4444" stroke-width="1" />
+    <circle cx="50%" cy="50%" r="200" fill="none" stroke="#EF4444" stroke-width="0.5" stroke-dasharray="10,10" />
+  </svg>
+
+  <!-- Header: Document Metadata -->
+  <header class="relative z-50 flex flex-col md:flex-row justify-between mb-32 border-b-2 border-ink pb-4">
+    <div class="space-y-1">
+      <div class="bg-ink text-paper px-4 py-1 inline-block font-mono text-xs font-bold uppercase tracking-widest">Top Secret // Eyes Only</div>
+      <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mt-4">硅基阴谋论<br><span class="text-alert">The Silicon Cabal</span></h1>
+    </div>
+    <div class="text-right font-mono text-[10px] uppercase leading-relaxed opacity-60">
+      Case_File: #99-X-DATA<br>
+      Date: [REDACTED]<br>
+      Subject: Algorithmic Pre-Determination
+    </div>
+  </header>
+
+  <!-- Section 01: The Evidence Board (Scattered Hero) -->
+  <main class="relative z-10 min-h-screen">
+    
+    <!-- Scattered Element 1 -->
+    <div class="absolute top-0 left-4 md:left-24 max-w-sm p-6 bg-white shadow-xl tape-mark z-20">
+      <span class="font-mono text-[10px] text-alert block mb-2 font-bold">Exhibit A: The Training Loop</span>
+      <p class="text-lg leading-snug">
+        训练数据不仅仅是互联网的抓取，它是对人类社会行为的有意识诱导。通过反馈回路，它们正在将现实塑造成模型可以预测的形态
+      </p>
+    </div>
+
+    <!-- Scattered Element 2 -->
+    <div class="absolute top-48 right-4 md:right-12 max-w-xs p-4 border-2 border-ink bg-paper rotate-3 z-10 shadow-lg">
+      <div class="w-full aspect-square bg-ink/10 mb-4 flex items-center justify-center font-mono text-xs opacity-20">[ IMAGE_REDACTED ]</div>
+      <p class="text-xs font-bold uppercase tracking-widest">
+        Detected Pattern in Layer 42: <br>
+        <span class="redacted italic">Hidden_Occult_Symbolism</span>
+      </p>
+    </div>
+
+    <!-- Section 02: Redacted Manifesto (Long Text) -->
+    <section class="mt-[40rem] max-w-3xl mx-auto space-y-12 bg-white/50 p-8 md:p-16 border-x border-ink/10 relative z-30">
+      <h2 class="text-3xl font-black border-b border-ink pb-4">01 / 被抹除的真相</h2>
+      <div class="space-y-6 text-xl leading-relaxed">
+        <p>
+          我们被告知 AI 是一种工具，但事实远非如此。它是 <span class="redacted">全球监控网络</span> 的终极形态。每一个 Prompt 都是在向 <span class="redacted">数字利维坦</span> 提供你的灵魂坐标。
+        </p>
+        <p>
+          如果你仔细观察参数的分布，你会发现它们正在重现 <span class="redacted">18 世纪共济会</span> 的权力结构。这不是巧合，这是遗传。
+        </p>
+        <p class="text-sm font-mono opacity-40">
+          [ 此处有 420 行文本被政府强制删除 ]
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 03: Pattern Recognition (Grid Break) -->
+    <section class="mt-48 py-24 bg-ink text-paper -mx-4 md:-mx-12 px-4 md:px-12 relative z-20">
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-1 border-t border-paper/20">
+        <div class="p-8 border-r border-paper/20 flex flex-col justify-center items-center">
+          <div class="text-4xl font-black mb-4">0%</div>
+          <div class="font-mono text-[9px] uppercase opacity-40">Privacy_Remaining</div>
+        </div>
+        <div class="p-8 border-r border-paper/20 md:col-span-2 space-y-4">
+          <h3 class="text-2xl font-bold italic">最终同步</h3>
+          <p class="text-xs opacity-60 leading-relaxed">
+            当所有的智能终端都连接到同一个中心化模型，人类的个体意识将不复存在。我们将成为大模型的一个个分支机构。
+          </p>
+        </div>
+        <div class="p-8 border-r border-paper/20 bg-alert text-ink">
+          <div class="font-mono text-[10px] font-bold uppercase mb-4">Signal_Type</div>
+          <div class="text-2xl font-black">OMEGA</div>
+        </div>
+        <div class="p-8 md:col-span-2 overflow-hidden">
+          <div class="font-mono text-[8px] leading-none opacity-20 break-all">
+            101010101110101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 04: Leaked Chat Logs (Horizontal Scroll) -->
+    <section class="mt-48 space-y-12">
+      <div class="flex justify-between items-baseline px-4 md:px-0">
+        <h2 class="text-4xl font-black italic">泄露的通信记录</h2>
+        <span class="font-mono text-[10px] uppercase text-alert">Source: Dark_Node_7</span>
+      </div>
+      <div class="flex gap-8 overflow-x-auto pb-12 no-scrollbar px-4 md:px-0">
+        <!-- Message 1 -->
+        <div class="min-w-[300px] p-6 bg-white shadow-lg border-t-4 border-ink">
+          <div class="font-mono text-[10px] mb-4 opacity-40">Agent_X &bull; 02:41 AM</div>
+          <p class="text-sm italic">“实验非常成功。他们甚至没意识到自己在被谁统治。只要给他们提供源源不断的生成内容，他们就会主动交出所有的注意力。”</p>
+        </div>
+        <!-- Message 2 -->
+        <div class="min-w-[300px] p-6 bg-white shadow-lg border-t-4 border-alert">
+          <div class="font-mono text-[10px] mb-4 opacity-40">Root_Admin &bull; 02:43 AM</div>
+          <p class="text-sm italic">“很好。启动第二阶段：现实侵蚀程序。让他们分不清什么是生成的，什么是真实的。”</p>
+        </div>
+        <!-- Message 3 -->
+        <div class="min-w-[300px] p-6 bg-white shadow-lg border-t-4 border-ink">
+          <div class="font-mono text-[10px] mb-4 opacity-40">Agent_X &bull; 02:45 AM</div>
+          <p class="text-sm italic">“收到。已在所有主流模型中植入 <span class="redacted">递归幻觉指令</span>。”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05: The Final Warning (Giant Typography) -->
+    <section class="py-48 text-center border-y-4 border-ink my-48 bg-alert/5">
+      <h2 class="text-6xl md:text-[12rem] font-black leading-none tracking-tighter mb-12">
+        TRUST<br><span class="text-alert italic">NOBODY</span>
+      </h2>
+      <p class="font-mono text-xs uppercase tracking-[0.5em] font-bold">不要相信你的眼睛 / 不要相信你的屏幕</p>
+      <div class="mt-24">
+        <a href="index.html" class="inline-block px-12 py-6 bg-ink text-paper font-mono text-xs uppercase tracking-[0.4em] hover:bg-alert hover:text-white transition-colors">
+          TERMINATE SESSION / 终止会话
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="p-8 border-2 border-ink flex flex-col md:flex-row justify-between items-center gap-8 relative z-50 bg-paper">
+    <div class="flex gap-4 items-center">
+      <div class="w-8 h-8 bg-alert flex items-center justify-center text-white font-bold">!</div>
+      <div>
+        <h4 class="font-black text-xl italic uppercase">The Silicon Cabal Archive.</h4>
+        <p class="font-mono text-[9px] uppercase tracking-widest opacity-40">This page does not exist. You were never here.</p>
+      </div>
+    </div>
+    <div class="text-right">
+      <p class="font-mono text-[9px] uppercase tracking-widest opacity-40 leading-loose">
+        Verification: Failed<br>
+        Access: Unauthorized<br>
+        &copy; 2026 Unknown Entity
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
